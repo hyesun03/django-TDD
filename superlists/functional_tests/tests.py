@@ -69,11 +69,15 @@ class NewVisitorTest(LiveServerTestCase):
 
         ## 새로운 브라우저 새션을 이용해서 에디스의 정보가 쿠키를 통해 유입되는 것을 방지한다.
         self.browser.quit()
+        time.sleep(5)
         caps = DesiredCapabilities.FIREFOX
         caps["marionette"] = True
         caps["binary"] = "/Applications/Firefox.app/Contents/MacOS/firefox-bin"
 
         self.browser = webdriver.Firefox(capabilities=caps)
+        # self.browser = webdriver.Chrome('/Users/hsun/Downloads/chromedriver_mac64/chromedriver')
+
+        self.browser.implicitly_wait(5)
 
         # 프란시스가 홈페이지에 접속한다.
         # 에디스의 리스트는 보이지 않는다.
@@ -87,10 +91,11 @@ class NewVisitorTest(LiveServerTestCase):
         inputbox = self.browser.find_element_by_id('id_new_item')
         inputbox.send_keys('우유 사기')
         inputbox.send_keys(Keys.ENTER)
+        # time.sleep(5)
 
         # 프란시스가 전용 URL을 취득한다.
         francis_list_url = self.browser.current_url
-        self.assertRegex(francis_list_url, 'lists/.+')
+        self.assertRegex(francis_list_url, '/lists/.+')
         self.assertNotEqual(francis_list_url, edith_list_url)
 
         # 에디스가 입력한 흔적이 없다는 것을 다시 확인한다.
