@@ -59,17 +59,16 @@ class NewVisitorTest(LiveServerTestCase):
         inputbox = self.browser.find_element_by_id('id_new_item')
         inputbox.send_keys('공작깃털을 이용해서 그물 만들기')
         inputbox.send_keys(Keys.ENTER)
-        time.sleep(5)
 
         # 페이지는 다시 갱신되고, 두 개 아이템이 목록에 보인다.
         self.check_for_row_in_list_table('1: 공작깃털 사기')
         self.check_for_row_in_list_table('2: 공작깃털을 이용해서 그물 만들기')
+        time.sleep(2)
 
         # 새로운 사용자인 프란시스가 사이트에 접속한다
 
         ## 새로운 브라우저 새션을 이용해서 에디스의 정보가 쿠키를 통해 유입되는 것을 방지한다.
         self.browser.quit()
-        time.sleep(5)
         caps = DesiredCapabilities.FIREFOX
         caps["marionette"] = True
         caps["binary"] = "/Applications/Firefox.app/Contents/MacOS/firefox-bin"
@@ -82,6 +81,7 @@ class NewVisitorTest(LiveServerTestCase):
         # 프란시스가 홈페이지에 접속한다.
         # 에디스의 리스트는 보이지 않는다.
         self.browser.get(self.live_server_url)
+        time.sleep(3)
         page_text = self.browser.find_element_by_tag_name('body').text
         self.assertNotIn('공작깃털 사기', page_text)
         self.assertNotIn('그물 만들기', page_text)
@@ -91,7 +91,7 @@ class NewVisitorTest(LiveServerTestCase):
         inputbox = self.browser.find_element_by_id('id_new_item')
         inputbox.send_keys('우유 사기')
         inputbox.send_keys(Keys.ENTER)
-        # time.sleep(5)
+        time.sleep(5)
 
         # 프란시스가 전용 URL을 취득한다.
         francis_list_url = self.browser.current_url
