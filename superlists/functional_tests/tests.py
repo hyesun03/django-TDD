@@ -2,19 +2,19 @@ from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.keys import Keys
 from django.test import LiveServerTestCase
-import unittest, time
+import unittest, time, os, sys
 
 
 class NewVisitorTest(LiveServerTestCase):
 
     def setUp(self):
-        caps = DesiredCapabilities.FIREFOX
-        caps["marionette"] = True
-        caps["binary"] = "/Applications/Firefox.app/Contents/MacOS/firefox-bin"
+        # caps = DesiredCapabilities.FIREFOX
+        # caps["marionette"] = True
+        # caps["binary"] = "/Applications/Firefox.app/Contents/MacOS/firefox-bin"
+        #
+        # self.browser = webdriver.Firefox(capabilities=caps)
 
-        self.browser = webdriver.Firefox(capabilities=caps)
-
-        # self.browser = webdriver.Chrome('/Users/hsun/Downloads/chromedriver_mac64/chromedriver')
+        self.browser = webdriver.Chrome(os.path.dirname(os.path.abspath(__file__)) + '/chromedriver_mac64/chromedriver')
         self.browser.implicitly_wait(5)
 
     def tearDown(self):
@@ -72,12 +72,12 @@ class NewVisitorTest(LiveServerTestCase):
 
         ## 새로운 브라우저 새션을 이용해서 에디스의 정보가 쿠키를 통해 유입되는 것을 방지한다.
         self.browser.quit()
-        caps = DesiredCapabilities.FIREFOX
-        caps["marionette"] = True
-        caps["binary"] = "/Applications/Firefox.app/Contents/MacOS/firefox-bin"
-
-        self.browser = webdriver.Firefox(capabilities=caps)
-        # self.browser = webdriver.Chrome('/Users/hsun/Downloads/chromedriver_mac64/chromedriver')
+        # caps = DesiredCapabilities.FIREFOX
+        # caps["marionette"] = True
+        # caps["binary"] = "/Applications/Firefox.app/Contents/MacOS/firefox-bin"
+        #
+        # self.browser = webdriver.Firefox(capabilities=caps)
+        self.browser = webdriver.Chrome(os.path.dirname(os.path.abspath(__file__)) + '/chromedriver_mac64/chromedriver')
 
         self.browser.implicitly_wait(5)
 
@@ -108,3 +108,25 @@ class NewVisitorTest(LiveServerTestCase):
 
         # 둘 다 만족하고 잠자리에 든다.
 
+    def test_layout_and_styling(self):
+        # 에디스는 메인 페이지를 방문한다
+        self.browser.get(self.live_server_url)
+        self.browser.set_window_size(1024, 768)
+
+        # 그녀는 입력 상자가 가운데 배치된 것을 본다
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        self.assertAlmostEqual(
+            inputbox.location['x'] + inputbox.size['width'] / 2,
+            512,
+            delta=10
+        )
+
+        # 그녀는 새로운 리스트를 시작하고 입력 상자가
+        # 가운데 배치된 것을 확인한다
+        inputbox.send_keys('testing\n')
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        self.assertAlmostEqual(
+            inputbox.location['x'] + inputbox.size['width'] / 2,
+            512,
+            delta=10
+        )
