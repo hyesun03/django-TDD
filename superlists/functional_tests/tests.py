@@ -50,6 +50,8 @@ class NewVisitorTest(LiveServerTestCase):
         # 엔터키를 치면 페이지가 갱신되고 작업 목록에
         # "1: 공작깃털 사기" 아이템이 추가된다
         inputbox.send_keys(Keys.ENTER)
+        time.sleep(1)
+
         edith_list_url = self.browser.current_url
         self.assertRegex(edith_list_url, '/lists/.+')
         self.check_for_row_in_list_table('1: 공작깃털 사기')
@@ -59,6 +61,7 @@ class NewVisitorTest(LiveServerTestCase):
         inputbox = self.browser.find_element_by_id('id_new_item')
         inputbox.send_keys('공작깃털을 이용해서 그물 만들기')
         inputbox.send_keys(Keys.ENTER)
+        time.sleep(1)
 
         # 페이지는 다시 갱신되고, 두 개 아이템이 목록에 보인다.
         self.check_for_row_in_list_table('1: 공작깃털 사기')
@@ -81,7 +84,7 @@ class NewVisitorTest(LiveServerTestCase):
         # 프란시스가 홈페이지에 접속한다.
         # 에디스의 리스트는 보이지 않는다.
         self.browser.get(self.live_server_url)
-        time.sleep(3)
+        # time.sleep(3)
         page_text = self.browser.find_element_by_tag_name('body').text
         self.assertNotIn('공작깃털 사기', page_text)
         self.assertNotIn('그물 만들기', page_text)
@@ -91,7 +94,7 @@ class NewVisitorTest(LiveServerTestCase):
         inputbox = self.browser.find_element_by_id('id_new_item')
         inputbox.send_keys('우유 사기')
         inputbox.send_keys(Keys.ENTER)
-        time.sleep(5)
+        time.sleep(1)
 
         # 프란시스가 전용 URL을 취득한다.
         francis_list_url = self.browser.current_url
