@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="355d3b28-83c2-4d76-9ae5-97790bbb7822" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/superlists/lists/tests/test_views.py" afterPath="$PROJECT_DIR$/superlists/lists/tests/test_views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/superlists/lists/views.py" afterPath="$PROJECT_DIR$/superlists/lists/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/superlists/lists/templates/home.html" afterPath="$PROJECT_DIR$/superlists/lists/templates/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/superlists/lists/templates/list.html" afterPath="$PROJECT_DIR$/superlists/lists/templates/list.html" />
     </list>
     <ignored path="test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,11 +46,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="list.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/superlists/lists/templates/list.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+              <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/superlists/lists/templates/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -93,7 +102,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/superlists/lists/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
@@ -101,6 +110,16 @@
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/superlists/lists/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,7 +145,6 @@
         <option value="$PROJECT_DIR$/superlists/lists/models.py" />
         <option value="$PROJECT_DIR$/superlists/lists/tests.py" />
         <option value="$PROJECT_DIR$/superlists/superlists/urls.py" />
-        <option value="$PROJECT_DIR$/superlists/lists/templates/home.html" />
         <option value="$PROJECT_DIR$/superlists/lists/static/base.css" />
         <option value="$PROJECT_DIR$/superlists/functional_tests/tests.py" />
         <option value="$PROJECT_DIR$/superlists/superlists/settings.py" />
@@ -137,10 +155,11 @@
         <option value="$PROJECT_DIR$/superlists/lists/tests/test_models.py" />
         <option value="$PROJECT_DIR$/superlists/lists/templates/base.html" />
         <option value="$PROJECT_DIR$/superlists/functional_tests/test_list_item_validation.py" />
-        <option value="$PROJECT_DIR$/superlists/lists/templates/list.html" />
         <option value="$PROJECT_DIR$/superlists/lists/urls.py" />
         <option value="$PROJECT_DIR$/superlists/lists/tests/test_views.py" />
         <option value="$PROJECT_DIR$/superlists/lists/views.py" />
+        <option value="$PROJECT_DIR$/superlists/lists/templates/home.html" />
+        <option value="$PROJECT_DIR$/superlists/lists/templates/list.html" />
       </list>
     </option>
   </component>
@@ -637,6 +656,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="45" selection-start-line="2" selection-start-column="45" selection-end-line="2" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -659,6 +679,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -686,6 +707,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -704,6 +726,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -722,6 +745,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -749,6 +773,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+          <folding>
+            <element signature="e#644#685#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -756,6 +783,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
           <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -768,13 +796,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/superlists/lists/tests.py" />
     <entry file="file://$PROJECT_DIR$/superlists/functional_tests/tests.py" />
-    <entry file="file://$PROJECT_DIR$/superlists/lists/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/superlists/functional_tests/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -800,14 +821,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/superlists/lists/tests/test_all.py" />
-    <entry file="file://$PROJECT_DIR$/superlists/lists/templates/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/superlists/functional_tests/test_simple_list_creation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-325">
@@ -825,14 +838,6 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/superlists/lists/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -866,6 +871,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/superlists/lists/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/superlists/lists/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/superlists/lists/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -874,13 +897,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/superlists/lists/views.py">
+    <entry file="file://$PROJECT_DIR$/superlists/lists/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/superlists/lists/templates/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
