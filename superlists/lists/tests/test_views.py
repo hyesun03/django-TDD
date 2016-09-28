@@ -7,25 +7,38 @@ import re
 
 from lists.views import home_page
 from lists.models import Item, List
+from lists.forms import ItemForm
 
 class HomePageTest(TestCase):
+    maxDiff = None
 
     def remove_csrf(self, origin):
         csrf_regex = r'<input[^>]+csrfmiddlewaretoken[^>]+>'
         return re.sub(csrf_regex, '', origin)
 
-    def test_root_url_resolves_to_home_page_view(self):
-        found = resolve('/')
-        self.assertEqual(found.func, home_page)
+    # def test_root_url_resolves_to_home_page_view(self):
+    #     found = resolve('/')
+    #     self.assertEqual(found.func, home_page)
+    #
+    # def test_home_page_returns_correct_html(self):
+    #     request = HttpRequest()
+    #     response = home_page(request)
+    #
+    #     expected_html = self.remove_csrf(render_to_string('home.html', {'form': ItemForm()}, request=request))
+    #     response_decode = self.remove_csrf(response.content.decode())
+    #     self.assertMultiLineEqual(response_decode, expected_html)
+    #
+    #     self.assertEqual(response_decode, expected_html)
 
-    def test_home_page_returns_correct_html(self):
-        request = HttpRequest()
-        response = home_page(request)
+    def test_home_page_renders_home_template(self):
+        response = self.client.get('/')
+        self.assertTemplateUsed(response, 'home.html')
 
-        expected_html = self.remove_csrf(render_to_string('home.html', request=request))
-        response_decode = self.remove_csrf(response.content.decode())
+    def test_home_page_uses_item_form(self):
+        response = self.client.get('/')
+        self.assertIsInstance(response.context['form'], ItemForm)
 
-        self.assertEqual(response_decode, expected_html)
+
 
 class ListViewTest(TestCase):
 
