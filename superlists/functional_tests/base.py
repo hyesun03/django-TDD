@@ -29,7 +29,7 @@ class FunctionalTest(StaticLiveServerTestCase):
         #
         # self.browser = webdriver.Firefox(capabilities=caps)
         self.browser = webdriver.Chrome(os.path.dirname(os.path.abspath(__file__)) + '/chromedriver_mac64/chromedriver')
-        self.browser.implicitly_wait(5)
+        self.browser.implicitly_wait(3)
 
     def tearDown(self):
         self.browser.quit()

@@ -33,7 +33,7 @@ class NewVisitorTest(FunctionalTest):
         # 엔터키를 치면 페이지가 갱신되고 작업 목록에
         # "1: 공작깃털 사기" 아이템이 추가된다
         inputbox.send_keys(Keys.ENTER)
-        time.sleep(1)
+        # time.sleep(1)
 
         edith_list_url = self.browser.current_url
         self.assertRegex(edith_list_url, '/lists/.+')
@@ -44,12 +44,12 @@ class NewVisitorTest(FunctionalTest):
         inputbox = self.get_item_input_box()
         inputbox.send_keys('공작깃털을 이용해서 그물 만들기')
         inputbox.send_keys(Keys.ENTER)
-        time.sleep(1)
+        # time.sleep(1)
 
         # 페이지는 다시 갱신되고, 두 개 아이템이 목록에 보인다.
         self.check_for_row_in_list_table('1: 공작깃털 사기')
         self.check_for_row_in_list_table('2: 공작깃털을 이용해서 그물 만들기')
-        time.sleep(2)
+        # time.sleep(1)
 
         # 새로운 사용자인 프란시스가 사이트에 접속한다
 
@@ -62,7 +62,7 @@ class NewVisitorTest(FunctionalTest):
         # self.browser = webdriver.Firefox(capabilities=caps)
         self.browser = webdriver.Chrome(os.path.dirname(os.path.abspath(__file__)) + '/chromedriver_mac64/chromedriver')
 
-        self.browser.implicitly_wait(5)
+        self.browser.implicitly_wait(3)
 
         # 프란시스가 홈페이지에 접속한다.
         # 에디스의 리스트는 보이지 않는다.
@@ -77,7 +77,7 @@ class NewVisitorTest(FunctionalTest):
         inputbox = self.get_item_input_box()
         inputbox.send_keys('우유 사기')
         inputbox.send_keys(Keys.ENTER)
-        time.sleep(1)
+        # time.sleep(1)
 
         # 프란시스가 전용 URL을 취득한다.
         francis_list_url = self.browser.current_url
@@ -91,25 +91,5 @@ class NewVisitorTest(FunctionalTest):
 
         # 둘 다 만족하고 잠자리에 든다.
 
-    def test_layout_and_styling(self):
-        # 에디스는 메인 페이지를 방문한다
-        self.browser.get(self.server_url)
-        self.browser.set_window_size(1024, 768)
 
-        # 그녀는 입력 상자가 가운데 배치된 것을 본다
-        inputbox = self.get_item_input_box()
-        self.assertAlmostEqual(
-            inputbox.location['x'] + inputbox.size['width'] / 2,
-            512,
-            delta=10
-        )
 
-        # 그녀는 새로운 리스트를 시작하고 입력 상자가
-        # 가운데 배치된 것을 확인한다
-        inputbox.send_keys('testing\n')
-        inputbox = self.get_item_input_box()
-        self.assertAlmostEqual(
-            inputbox.location['x'] + inputbox.size['width'] / 2,
-            512,
-            delta=10
-        )
