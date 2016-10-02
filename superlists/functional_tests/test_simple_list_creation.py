@@ -49,6 +49,7 @@ class NewVisitorTest(FunctionalTest):
         # 페이지는 다시 갱신되고, 두 개 아이템이 목록에 보인다.
         self.check_for_row_in_list_table('1: 공작깃털 사기')
         self.check_for_row_in_list_table('2: 공작깃털을 이용해서 그물 만들기')
+        time.sleep(1)
         # 새로운 사용자인 프란시스가 사이트에 접속한다
 
         ## 새로운 브라우저 새션을 이용해서 에디스의 정보가 쿠키를 통해 유입되는 것을 방지한다.
